@@ -1,20 +1,19 @@
 [project]
-name = "api"
+name = "infra"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
+authors = [
+    { name = "mmaiokha", email = "maksym.maiokha.dev@gmail.com" }
+]
 requires-python = ">=3.14"
 dependencies = [
-    "alembic>=1.19.2",
-    "asyncpg>=0.31.0",
-    "fastapi[standard]>=0.141.1",
     "minio>=7.2.20",
-    "psycopg2-binary>=2.9.12",
     "pydantic-settings>=2.15.0",
-    "python-dotenv>=1.2.3",
-    "sqlmodel>=0.0.42",
 ]
+
 
 
 [tool.uv]
 package = false
+
