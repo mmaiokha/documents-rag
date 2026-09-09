@@ -1,7 +1,7 @@
 from .service import UploadsServiceDep
 from core.database import SessionDep
 from fastapi import APIRouter
-from uploads.schemas import GenerateUpload, ReadUpload
+from uploads.schemas import GenerateUpload, GenerateUploadResponse
 from sqlmodel import Session
 
 router = APIRouter(
@@ -10,7 +10,7 @@ router = APIRouter(
 )
 
 
-@router.post("/presigned-url", response_model=ReadUpload)
+@router.post("/presigned-url", response_model=GenerateUploadResponse)
 async def get_presigned_url(
     body: GenerateUpload,
     service: UploadsServiceDep,

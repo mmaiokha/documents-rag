@@ -9,5 +9,8 @@ class GenerateUpload(SQLModel):
     file_size: int = Field(sa_type=sa.Integer)
     bucket: str = Field(sa_type=sa.String)
 
+class GenerateUploadResponse(Upload):
+    presigned_url: str = Field(sa_type=sa.String)
+
 class ReadUpload(Upload):
     pass

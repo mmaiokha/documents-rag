@@ -1,5 +1,10 @@
+from pathlib import Path
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+
+print(PROJECT_ROOT)
 
 class Settings(BaseSettings):
     database_url: str
@@ -9,7 +14,7 @@ class Settings(BaseSettings):
     minio_secure: bool
 
     model_config = SettingsConfigDict(
-        env_file=".env",
+        env_file=f"{PROJECT_ROOT}/.env",
         env_file_encoding="utf-8",
         extra="ignore",
     )

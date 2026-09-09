@@ -5,10 +5,10 @@ api-start:
 	uv run --project api fastapi run api/src/main.py
 
 migrate:
-	uv run --project api alembic upgrade head
+	cd api && uv run alembic upgrade head
 
 migration:
-	uv run --project api alembic revision --autogenerate -m "$(name)"
+	cd api && uv run alembic revision --autogenerate -m "$(name)"
 
 infra-setup:
 	uv run --project infra infra/src/main.py
