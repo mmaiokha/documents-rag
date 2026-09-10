@@ -1,12 +1,12 @@
 from typing import Annotated
 from .settings import settings
-from sqlmodel import create_engine, Session, SQLModel
+from sqlmodel import Session
 from fastapi import Depends
 
+from shared.db import create_database_engine
 
-DATABASE_URL = settings.database_url
 
-engine = create_engine(DATABASE_URL, echo=True)
+engine = create_database_engine(settings.database_url)
 
 def get_session():
     with Session(engine) as session:

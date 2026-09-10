@@ -13,8 +13,12 @@ dependencies = [
     "pydantic-settings>=2.15.0",
     "python-dotenv>=1.2.3",
     "sqlmodel>=0.0.42",
+    "shared"
 ]
 
 
 [tool.uv]
 package = false
+
+[tool.uv.sources]
+shared = { path = "../shared" }

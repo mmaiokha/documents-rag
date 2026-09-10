@@ -1,6 +1,6 @@
 from typing import Annotated
 
-from .models import Document
+from shared.db.models import Document
 from .schemas import CreateDocument, ReadDocument
 from uploads.service import UploadsService, UploadsServiceDep
 from fastapi import Depends

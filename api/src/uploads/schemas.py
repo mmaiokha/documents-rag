@@ -1,4 +1,4 @@
-from .models import Upload
+from shared.db.models.uploads import Upload
 from sqlmodel import SQLModel, Field
 import sqlalchemy as sa
 

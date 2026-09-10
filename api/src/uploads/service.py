@@ -1,7 +1,7 @@
 import copy
 from datetime import timedelta
 from typing import Annotated
-from .models import Upload, UploadStatus
+from shared.db.models import Upload, UploadStatus
 from core.storage import ObjectStorage, ObjectStorageDep
 from .schemas import GenerateUpload, GenerateUploadResponse
 from sqlmodel import Session, select
@@ -59,6 +59,9 @@ class UploadsService:
         upload = session.get(Upload, upload_id)
         if not upload:
             raise HTTPException(status_code=404, detail="Uploaded filed does not exists")
+
+        if upload.status != UploadStatus.PENDING:
+            raise HTTPException(status_code=404, detail="File already uploaded")
 
         permanent_object_name = f"permanent/{upload.id}/{upload.file_name}"
 

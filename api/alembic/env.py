@@ -7,8 +7,8 @@ from sqlmodel import SQLModel
 
 from alembic import context
 
-from src.documents.models import Document
-from src.uploads.models import Upload
+from shared.db.models import Document
+from shared.db.models import Upload
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

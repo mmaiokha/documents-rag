@@ -1,5 +1,5 @@
 
-from .models import Document
+from shared.db.models import Document
 from sqlmodel import SQLModel, Field
 import sqlalchemy as sa
 

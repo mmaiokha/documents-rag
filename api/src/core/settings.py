@@ -4,8 +4,6 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
-print(PROJECT_ROOT)
-
 class Settings(BaseSettings):
     database_url: str
     minio_url: str
