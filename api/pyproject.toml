@@ -13,12 +13,19 @@ dependencies = [
     "pydantic-settings>=2.15.0",
     "python-dotenv>=1.2.3",
     "sqlmodel>=0.0.42",
-    "shared"
+    "shared",
+    "pgvector>=0.5.0",
 ]
 
-
 [tool.uv]
-package = false
+package = true
 
 [tool.uv.sources]
-shared = { path = "../shared" }
+shared = { path = "../shared", editable = true }
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,2 +1,2 @@
-from .document import Document
+from .document import Document, DocumentEmbeddings
 from .uploads import Upload, UploadStatus

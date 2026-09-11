@@ -1,6 +1,8 @@
 from typing import Annotated
 
+from core.celery import celery_app
 from shared.db.models import Document
+from shared.tasks.documents import PROCESS_DOCUMENT
 from .schemas import CreateDocument, ReadDocument
 from uploads.service import UploadsService, UploadsServiceDep
 from fastapi import Depends
@@ -29,6 +31,8 @@ class DocumentsService:
         session.add(document)
         session.commit()
         session.refresh(document)
+
+        celery_app.send_task(PROCESS_DOCUMENT, args=[str(document.id)])
 
         file_url = self.uploads_service.get_presigned_get_url(upload.file_bucket, object_name=upload.file_key)
 

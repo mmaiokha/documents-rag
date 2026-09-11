@@ -1,0 +1,24 @@
+{
+    "folders": [
+      {
+        "name": "infra",
+        "path": "infra"
+      },
+      {
+        "name": "shared",
+        "path": "shared"
+      },
+      {
+        "name": "api",
+        "path": "api"
+      },
+      {
+        "name": "worker",
+        "path": "worker"
+      },
+      {
+        "name": "root",
+        "path": "./"
+      }
+    ]
+  }
