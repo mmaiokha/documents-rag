@@ -15,6 +15,7 @@ dependencies = [
     "sqlmodel>=0.0.42",
     "shared",
     "pgvector>=0.5.0",
+    "openai>=3.13.0",
 ]
 
 [tool.uv]

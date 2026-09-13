@@ -8,7 +8,7 @@ from sqlmodel import SQLModel
 from alembic import context
 import pgvector.sqlalchemy
 
-from shared.db.models import Upload, Document, DocumentEmbeddings
+from shared.db.models import Upload, Document, DocumentEmbeddings, Chat, ChatMessage, ChatMessageRole
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.

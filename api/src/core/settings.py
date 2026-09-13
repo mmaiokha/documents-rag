@@ -11,7 +11,9 @@ class Settings(BaseSettings):
     minio_password: str
     minio_secure: bool
     redis_url: str
-
+    openai_api_key: str
+    embeddings_model: str
+    
     model_config = SettingsConfigDict(
         env_file=f"{PROJECT_ROOT}/.env",
         env_file_encoding="utf-8",
